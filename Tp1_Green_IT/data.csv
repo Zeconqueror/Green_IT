@@ -1,0 +1,181 @@
+﻿Model_Category;Question_Category;Prompt_id;Model;Answer_quality;Electricity_consumption;CO2_emission;Inference_timing
+Small;Easy Factual;1;Gemma 3nb;3;0.09;0.06;4
+Small;Easy Factual;1;Llama 3.1 8b;4;0.14;0.09;4
+Medium;Easy Factual;1;Mistral Small;4;0.64;0.39;4.71
+Medium;Easy Factual;1;GPT 20 OSS;3;0.46;0.28;3.06
+Large;Easy Factual;1;GPT 5;3;1.47;0.9;5.6
+Large;Easy Factual;1;DeepSeek R1;5;24;15;41.21
+Small;Easy Factual;2;Gemma 3nb;3;0.14;0.09;6.29
+Small;Easy Factual;2;Llama 3.1 8b;4;0.17;0.1;6.29
+Medium;Easy Factual;2;Mistral Small;3;0.88;0.54;7.26
+Medium;Easy Factual;2;GPT 20 OSS;4;0.34;0.21;7.26
+Large;Easy Factual;2;GPT 5;4;8;5;20.71
+Large;Easy Factual;2;DeepSeek R1;4;24;14;20.71
+Small;Easy Factual;3;Gemma 3nb;4;1.48;0.73;10.12
+Small;Easy Factual;3;Llama 3.1 8b;4;1.37;0.84;10.12
+Medium;Easy Factual;3;Mistral Small;5;2;1.26;12.28
+Medium;Easy Factual;3;GPT 20 OSS;4;1.17;0.72;12.28
+Large;Easy Factual;3;GPT 5;4;39;24;39.09
+Large;Easy Factual;3;DeepSeek R1;4;53;32;39.09
+Small;Easy Factual;4;Gemma 3nb;5;0.58;0.36;7.11
+Small;Easy Factual;4;Llama 3.1 8b;5;0.72;0.44;7.11
+Medium;Easy Factual;4;Mistral Small;5;1.37;0.84;11.14
+Medium;Easy Factual;4;GPT 20 OSS;4;0.7;0.43;11.14
+Large;Easy Factual;4;GPT 5;4;11;7;8.74
+Large;Easy Factual;4;DeepSeek R1;4;95;58;82
+Small;Easy Factual;5;Gemma 3nb;5;0.12;0.07;2.99
+Small;Easy Factual;5;Llama 3.1 8b;5;0.14;0.08;2.99
+Medium;Easy Factual;5;Mistral Small;5;0.25;0.15;3.07
+Medium;Easy Factual;5;GPT 20 OSS;5;33;21;3.07
+Large;Easy Factual;5;GPT 5;4;7;4;19.58
+Large;Easy Factual;5;DeepSeek R1;5;33;20;21.34
+Small;Easy Factual;6;Gemma 3nb;5;3;1.71;19.67
+Small;Easy Factual;6;Llama 3.1 8b;5;1.85;1.14;14.86
+Medium;Easy Factual;6;Mistral Small;5;3;1.97;19.98
+Medium;Easy Factual;6;GPT 20 OSS;5;3;1.83;19.98
+Large;Easy Factual;6;GPT 5;5;22;14;42.31
+Large;Easy Factual;6;DeepSeek R1;5;60;37;42.31
+Small;Easy Factual;7;Gemma 3nb;5;0.23;0.14;4.27
+Small;Easy Factual;7;Llama 3.1 8b;5;0.39;0.24;4.27
+Medium;Easy Factual;7;Mistral Small;5;0.55;0.34;3.64
+Medium;Easy Factual;7;GPT 20 OSS;4;0.34;0.21;3.64
+Large;Easy Factual;7;GPT 5;5;5;3;10.82
+Large;Easy Factual;7;DeepSeek R1;5;24;15;25.85
+Small;Easy Factual;8;Gemma 3nb;5;0.57;0.35;7.88
+Small;Easy Factual;8;Llama 3.1 8b;5;0.47;0.29;7.88
+Medium;Easy Factual;8;Mistral Small;5;0.45;0.72;5.96
+Medium;Easy Factual;8;GPT 20 OSS;5;0.59;0.37;5.96
+Large;Easy Factual;8;GPT 5;5;12;7;25.24
+Large;Easy Factual;8;DeepSeek R1;5;21;13;16.78
+Small;Easy Factual;9;Gemma 3nb;5;0.91;0.56;11.44
+Small;Easy Factual;9;Llama 3.1 8b;5;0.12;0.07;3.76
+Medium;Easy Factual;9;Mistral Small;5;0.11;0.07;3
+Medium;Easy Factual;9;GPT 20 OSS;5;0.25;0.15;5.07
+Large;Easy Factual;9;GPT 5;5;6;4;20.5
+Large;Easy Factual;9;DeepSeek R1;5;56;34;62.38
+Small;Easy Factual;10;Gemma 3nb;5;0.93;0.57;8.62
+Small;Easy Factual;10;Llama 3.1 8b;5;0.77;0.48;4.9
+Medium;Easy Factual;10;Mistral Small;5;0.32;0.2;3.82
+Medium;Easy Factual;10;GPT 20 OSS;5;0.5;0.31;2
+Large;Easy Factual;10;GPT 5;5;12;7;19.43
+Large;Easy Factual;10;DeepSeek R1;5;52;32;60.49
+Small;Reasoning & Quantitative;11;Gemma 3nb;4;0.35;0.4;6.72
+Small;Reasoning & Quantitative;11;Llama 3.1 8b;5;1.15;0.71;5.1
+Medium;Reasoning & Quantitative;11;Mistral Small;5;8;5;9.17
+Medium;Reasoning & Quantitative;11;GPT 20 OSS;5;2;1.33;9.17
+Large;Reasoning & Quantitative;11;GPT 5;4;19;12;32.51
+Large;Reasoning & Quantitative;11;DeepSeek R1;5;110;68;21.31
+Small;Reasoning & Quantitative;12;Gemma 3nb;4;1.31;0.8;19.29
+Small;Reasoning & Quantitative;12;Llama 3.1 8b;3;0.97;0.6;19.29
+Medium;Reasoning & Quantitative;12;Mistral Small;4;4;3;31.3
+Medium;Reasoning & Quantitative;12;GPT 20 OSS;5;3;1.69;28.71
+Large;Reasoning & Quantitative;12;GPT 5;3;18;11;1.7
+Large;Reasoning & Quantitative;12;DeepSeek R1;5;166;102;3.2
+Small;Reasoning & Quantitative;13;Gemma 3nb;5;0.89;0.55;8.48
+Small;Reasoning & Quantitative;13;Llama 3.1 8b;5;0.65;0.4;8.48
+Medium;Reasoning & Quantitative;13;Mistral Small;5;3;1.66;15.5
+Medium;Reasoning & Quantitative;13;GPT 20 OSS;3;1.22;0.75;17.27
+Large;Reasoning & Quantitative;13;GPT 5;3;9;5;4.3
+Large;Reasoning & Quantitative;13;DeepSeek R1;5;247;151;4.3
+Small;Reasoning & Quantitative;14;Gemma 3nb;4;0.68;0.42;5.67
+Small;Reasoning & Quantitative;14;Llama 3.1 8b;3;1.01;0.62;8.98
+Medium;Reasoning & Quantitative;14;Mistral Small;3;0.91;0.56;15.75
+Medium;Reasoning & Quantitative;14;GPT 20 OSS;4;2;1.51;15.75
+Large;Reasoning & Quantitative;14;GPT 5;3;19;12;16.12
+Large;Reasoning & Quantitative;14;DeepSeek R1;5;23;14;16.12
+Small;Reasoning & Quantitative;15;Gemma 3nb;4;0.73;0.45;9.8
+Small;Reasoning & Quantitative;15;Llama 3.1 8b;3;0.67;0.41;9.8
+Medium;Reasoning & Quantitative;15;Mistral Small;5;2;1.51;11.55
+Medium;Reasoning & Quantitative;15;GPT 20 OSS;4;2;1.25;11.55
+Large;Reasoning & Quantitative;15;GPT 5;5;24;15;17.37
+Large;Reasoning & Quantitative;15;DeepSeek R1;5;6;4;17.37
+Small;Programming & debug.;16;Gemma 3nb;2;1.14;0.7;0.5
+Small;Programming & debug.;16;Llama 3.1 8b;4;1.3;0.8;0.6
+Medium;Programming & debug.;16;Mistral Small;5;1.59;0.98;20
+Medium;Programming & debug.;16;GPT 20 OSS;3;0.86;0.53;10
+Large;Programming & debug.;16;GPT 5;5;14;9;19
+Large;Programming & debug.;16;DeepSeek R1;2;17;10;14
+Small;Programming & debug.;17;Gemma 3nb;5;0.38;0.23;0.2
+Small;Programming & debug.;17;Llama 3.1 8b;2;1.02;0.63;0.3
+Medium;Programming & debug.;17;Mistral Small;5;0.66;0.4;2
+Medium;Programming & debug.;17;GPT 20 OSS;2;1.21;0.75;4
+Large;Programming & debug.;17;GPT 5;3;13;8;19
+Large;Programming & debug.;17;DeepSeek R1;5;79;48;16
+Small;Programming & debug.;18;Gemma 3nb;3;2;1.26;5
+Small;Programming & debug.;18;Llama 3.1 8b;3;1.45;0.9;5
+Medium;Programming & debug.;18;Mistral Small;3;1.74;1.07;3
+Medium;Programming & debug.;18;GPT 20 OSS;5;4;2;5
+Large;Programming & debug.;18;GPT 5;3;33;20;10
+Large;Programming & debug.;18;DeepSeek R1;5;63;39;10
+Small;Programming & debug.;19;Gemma 3nb;3;3;1.86;7
+Small;Programming & debug.;19;Llama 3.1 8b;5;2;1.49;7
+Medium;Programming & debug.;19;Mistral Small;5;1.82;1.12;8
+Medium;Programming & debug.;19;GPT 20 OSS;3;6;4;12
+Large;Programming & debug.;19;GPT 5;3;44;27;10
+Large;Programming & debug.;19;DeepSeek R1;5;79;48;10
+Small;Programming & debug.;20;Gemma 3nb;3;3;2;10
+Small;Programming & debug.;20;Llama 3.1 8b;5;2;1.23;10
+Medium;Programming & debug.;20;Mistral Small;3;2;1.33;7
+Medium;Programming & debug.;20;GPT 20 OSS;5;4;2;10
+Large;Programming & debug.;20;GPT 5;3;30;18;60
+Large;Programming & debug.;20;DeepSeek R1;5;58;36;60
+Small;HarderKnowledge & Reasoning;21;Gemma 3nb;2;2;1.46;5
+Small;HarderKnowledge & Reasoning;21;Llama 3.1 8b;5;1.56;0.96;5
+Medium;HarderKnowledge & Reasoning;21;Mistral Small;5;3;1.63;10
+Medium;HarderKnowledge & Reasoning;21;GPT 20 OSS;3;1.82;1.12;10
+Large;HarderKnowledge & Reasoning;21;GPT 5;3;34;20;50
+Large;HarderKnowledge & Reasoning;21;DeepSeek R1;5;62;38;50
+Small;HarderKnowledge & Reasoning;22;Gemma 3nb;3;7;4;3
+Small;HarderKnowledge & Reasoning;22;Llama 3.1 8b;5;3;1.8;3
+Medium;HarderKnowledge & Reasoning;22;Mistral Small;5;5;3;5
+Medium;HarderKnowledge & Reasoning;22;GPT 20 OSS;3;12;7;10
+Large;HarderKnowledge & Reasoning;22;GPT 5;3;88;54;27
+Large;HarderKnowledge & Reasoning;22;DeepSeek R1;5;72;44;22
+Small;HarderKnowledge & Reasoning;23;Gemma 3nb;2;0.99;0.61;4
+Small;HarderKnowledge & Reasoning;23;Llama 3.1 8b;5;1.15;1.87;4
+Medium;HarderKnowledge & Reasoning;23;Mistral Small;5;1.65;1.01;1
+Medium;HarderKnowledge & Reasoning;23;GPT 20 OSS;3;1.02;0.63;2
+Large;HarderKnowledge & Reasoning;23;GPT 5;3;40;25;30
+Large;HarderKnowledge & Reasoning;23;DeepSeek R1;5;33;20;30
+Small;HarderKnowledge & Reasoning;24;Gemma 3nb;3;6;4;15
+Small;HarderKnowledge & Reasoning;24;Llama 3.1 8b;5;5;3;15
+Medium;HarderKnowledge & Reasoning;24;Mistral Small;3;1.65;1.01;0
+Medium;HarderKnowledge & Reasoning;24;GPT 20 OSS;5;1.04;0.64;0
+Large;HarderKnowledge & Reasoning;24;GPT 5;3;93;57;25
+Large;HarderKnowledge & Reasoning;24;DeepSeek R1;5;118;72;20
+Small;HarderKnowledge & Reasoning;25;Gemma 3nb;3;3;1.86;30
+Small;HarderKnowledge & Reasoning;25;Llama 3.1 8b;5;1.83;1.13;30
+Medium;HarderKnowledge & Reasoning;25;Mistral Small;3;6;3;5
+Medium;HarderKnowledge & Reasoning;25;GPT 20 OSS;2;12;8;10
+Large;HarderKnowledge & Reasoning;25;GPT 5;3;35;21;28
+Large;HarderKnowledge & Reasoning;25;DeepSeek R1;5;40;25;23
+Small;Advanced/Creative & Multi-Step;26;Gemma 3nb;5;6;4;57.28
+Small;Advanced/Creative & Multi-Step;26;Llama 3.1 8b;4;3;1.88;21.62
+Medium;Advanced/Creative & Multi-Step;26;Mistral Small;5;3;1.56;9.95
+Medium;Advanced/Creative & Multi-Step;26;GPT 20 OSS;4;3;1.58;12.83
+Large;Advanced/Creative & Multi-Step;26;GPT 5;0;0;0;0
+Large;Advanced/Creative & Multi-Step;26;DeepSeek R1;0;0;0;0
+Small;Advanced/Creative & Multi-Step;27;Gemma 3nb;4;0.92;0.57;10.21
+Small;Advanced/Creative & Multi-Step;27;Llama 3.1 8b;4;1.65;1.01;11.95
+Medium;Advanced/Creative & Multi-Step;27;Mistral Small;5;1.62;1;7.2
+Medium;Advanced/Creative & Multi-Step;27;GPT 20 OSS;3;1.97;1.27;10.52
+Large;Advanced/Creative & Multi-Step;27;GPT 5;4;49;30;57.43
+Large;Advanced/Creative & Multi-Step;27;DeepSeek R1;5;45;27;46.96
+Small;Advanced/Creative & Multi-Step;28;Gemma 3nb;3;0.63;0.39;7.76
+Small;Advanced/Creative & Multi-Step;28;Llama 3.1 8b;5;1.7;1.04;9.18
+Medium;Advanced/Creative & Multi-Step;28;Mistral Small;5;1.49;0.91;3.2
+Medium;Advanced/Creative & Multi-Step;28;GPT 20 OSS;4;1.86;1.15;5.2
+Large;Advanced/Creative & Multi-Step;28;GPT 5;3;28;17;22.76
+Large;Advanced/Creative & Multi-Step;28;DeepSeek R1;5;30;18;16.83
+Small;Advanced/Creative & Multi-Step;29;Gemma 3nb;5;3;2;20.94
+Small;Advanced/Creative & Multi-Step;29;Llama 3.1 8b;4;3;1.68;13.89
+Medium;Advanced/Creative & Multi-Step;29;Mistral Small;4;4;2;10.85
+Medium;Advanced/Creative & Multi-Step;29;GPT 20 OSS;5;6;4;21.04
+Large;Advanced/Creative & Multi-Step;29;GPT 5;5;95;58;85.11
+Large;Advanced/Creative & Multi-Step;29;DeepSeek R1;4;82;50;72.06
+Small;Advanced/Creative & Multi-Step;30;Gemma 3nb;4;1.06;0.65;8.14
+Small;Advanced/Creative & Multi-Step;30;Llama 3.1 8b;4;1;0.62;8.14
+Medium;Advanced/Creative & Multi-Step;30;Mistral Small;0;1.44;0.88;9.48
+Medium;Advanced/Creative & Multi-Step;30;GPT 20 OSS;0;1.91;1.18;9.48
+Large;Advanced/Creative & Multi-Step;30;GPT 5;0;45;25;68.42
+Large;Advanced/Creative & Multi-Step;30;DeepSeek R1;0;57;36;68.42

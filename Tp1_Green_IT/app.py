@@ -23,9 +23,7 @@ with st.expander("📂 Show/Hide Dataset Preview", expanded=False):
 # 7️⃣ Extended: Download PPT
 # =======================================
 
-
-
-with st.expander("📂Extended: TP1Compar'AI Presentation", expanded=False):
+with st.expander("📂Presentation: TP1Compar'AI", expanded=False):
     st.subheader("Here is the PowerPoint file (.pptx)")
 
     # chemins candidats — ajuste si nécessaire
@@ -304,3 +302,4 @@ st.plotly_chart(fig_scatter,width="stretch")
 
 
         
+

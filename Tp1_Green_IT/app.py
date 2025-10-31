@@ -24,7 +24,7 @@ with st.expander("📂Dataset Preview", expanded=False):
 # =======================================
 
 with st.expander("📂Presentation: TP1Compar'AI", expanded=False):
-    st.subheader("Here is the PowerPoint file (.pptx)")
+    st.subheader("Here is the PowerPoint file")
 
     # chemins candidats — ajuste si nécessaire
     ppt_candidates = [
@@ -302,5 +302,6 @@ st.plotly_chart(fig_scatter,width="stretch")
 
 
         
+
 
 

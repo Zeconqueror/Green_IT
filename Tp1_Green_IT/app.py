@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import os
 
 # =======================================
 # 1️⃣ Configuration
@@ -11,7 +12,7 @@ st.title("🌍 LLM Evaluation Dashboard: Percformance vs Impact")
 # =======================================
 # 2️⃣ Load Data
 # =======================================
-df = pd.read_csv("data.csv", sep=";")
+df = pd.read_csv("Tp1_Green_IT/data.csv", sep=";")
 
 # --- Dataset preview ---
 with st.expander("📂 Show/Hide Dataset Preview", expanded=False):
@@ -324,18 +325,29 @@ st.plotly_chart(fig_scatter, use_container_width=True)
 # 7️⃣ Extended: Download PPT
 # =======================================
 
+
+
 with st.expander("📂Extended: TP1Compar'AI Presentation", expanded=False):
     st.subheader("Here is the PowerPoint file (.pptx)")
 
-    # Chemin du fichier PPT déjà généré
-    ppt_file_path = "dashboard.pptx"
+    # chemins candidats — ajuste si nécessaire
+    ppt_candidates = [
+        "Tp1_Green_IT/dashboard.pptx",
+        "dashboard.pptx",
+        "Tp1_Green_IT/output/dashboard.pptx"
+    ]
+    ppt_file_path = next((p for p in ppt_candidates if os.path.exists(p)), None)
 
-    # Bouton de téléchargement
-    with open(ppt_file_path, "rb") as f:
-        ppt_bytes = f.read()
+    if ppt_file_path:
+        st.success(f"Fichier trouvé : {ppt_file_path}")
+        with open(ppt_file_path, "rb") as f:
+            ppt_bytes = f.read()
         st.download_button(
-            label="📥 Download PPT",
+            label="📥 Télécharger le PPTX",
             data=ppt_bytes,
-            file_name="dahsboard.pptx",
+            file_name=os.path.basename(ppt_file_path),
             mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
         )
+    else:
+        st.warning("Aucun fichier PPTX trouvé. Chemins vérifiés: " + ", ".join(ppt_candidates))
+        

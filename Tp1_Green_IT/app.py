@@ -26,15 +26,16 @@ with st.expander("📂 Show/Hide Dataset Preview", expanded=False):
 filtered_df = df.copy()
 
 # =======================================
-# 1️⃣ Model Overview: Performance & Consumption (Line Charts, compact)
+# 🍩 Model Overview: Metrics Summary (Pie Charts)
 # =======================================
 
-st.subheader("Model Overview: Metrics Summary")
+st.subheader("Model Overview: Metrics Summary (Pie Charts)")
 
-# --- View mode uniquement ---
+# --- Sélecteur de mode de vue ---
 view_option = st.radio(
-    "Select View Mode",
-    options=["View by Model", "View by Model Category"]
+    "Select View Mode for Pie Charts",
+    options=["View by Model", "View by Model Category"],
+    key="pie_view"
 )
 
 # --- Agrégation selon le mode de vue ---
@@ -50,7 +51,7 @@ if view_option == "View by Model":
         "CO2_emission": "Avg CO2 (g)",
         "Inference_timing": "Avg Inference Time (s)"
     })
-    x_axis = "Model"
+    label_col = "Model"
 else:
     summary_df = df.groupby("Model_Category", as_index=False).agg({
         "Answer_quality": "mean",
@@ -63,84 +64,36 @@ else:
         "CO2_emission": "Avg CO2 (g)",
         "Inference_timing": "Avg Inference Time (s)"
     })
-    x_axis = "Model_Category"
+    label_col = "Model_Category"
 
-
-# --- 4️⃣ Visualisation ---
+# --- Liste des métriques à afficher ---
 metrics = ["Avg Quality", "Avg Electricity (Wh)", "Avg CO2 (g)", "Avg Inference Time (s)"]
-st.subheader("Visual Comparison by Metric")
 
+# --- Création des camemberts ---
 cols = st.columns(2)  # 2 graphiques par ligne
 
 for i, metric in enumerate(metrics):
-    fig = px.line(
-        summary_df.sort_values(metric, ascending=False),
-        x=x_axis,
-        y=metric,
-        text=metric,
-        markers=True,
-        color_discrete_sequence=["#004080"],
+    fig = px.pie(
+        summary_df,
+        names=label_col,
+        values=metric,
+        title=f"{metric} Distribution",
+        hole=0.4,  # style donut
+        color_discrete_sequence=px.colors.qualitative.Safe
     )
-    fig.update_traces(texttemplate="%{text:.1f}", textposition="top center")
+    fig.update_traces(
+        textposition="inside",
+        textinfo="percent+label",
+        pull=[0.05] * len(summary_df)
+    )
     fig.update_layout(
-        plot_bgcolor="white",
+        showlegend=True,
+        height=400,
         paper_bgcolor="white",
-        xaxis_title="",
-        yaxis_title=metric,
-        height=300
+        plot_bgcolor="white"
     )
-    # Afficher 2 graphiques par ligne
     cols[i % 2].plotly_chart(fig, use_container_width=True)
-
-
-
-
-
-# =======================================
-# 4️⃣ Heatmap: Average Answer Quality per Model Type & Question Type (Monochrome)
-# =======================================
-st.subheader("Average Answer Quality per Model Type & Question Type")
-# Calculer la moyenne par Model_Category et Question_Category
-heatmap_data = filtered_df.groupby(
-    ["Model_Category", "Question_Category"], as_index=False
-)["Answer_quality"].mean()
-
-# Créer la heatmap monochrome
-fig_heatmap = px.density_heatmap(
-    heatmap_data,
-    x="Question_Category",
-    y="Model_Category",
-    z="Answer_quality",
-    color_continuous_scale=["#e0f3ff", "#004080"],  # clair → foncé (monochrome bleu)
-    text_auto=True,
-    labels={"Answer_quality": "Avg Answer Quality"}
-)
-
-# Mise en forme UX/UI
-fig_heatmap.update_traces(textfont_size=14, textfont_color="black")
-fig_heatmap.update_layout(
-    title={
-        'text': "",
-        'y': 0.95,
-        'x': 0.5,
-        'xanchor': 'center',
-        'yanchor': 'top'
-    },
-    xaxis_title="Question Type",
-    yaxis_title="Model Type",
-    yaxis={'categoryorder': 'total ascending'},
-    plot_bgcolor="white",
-    paper_bgcolor="white",
-    coloraxis_colorbar=dict(
-        title="Avg Quality",
-        tickvals=[1, 2, 3, 4, 5]
-    )
-)
-
-# Affichage dans Streamlit
-st.plotly_chart(fig_heatmap, use_container_width=True)
-
-
+    
 # =======================================
 # 5️⃣ Line Chart: Avg Answer Quality & Inference Time per Model Type
 # =======================================

@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
 import os
 
 # =======================================
@@ -93,64 +92,94 @@ for i, metric in enumerate(metrics):
         paper_bgcolor="white",
         plot_bgcolor="white"
     )
-    cols[i % 2].plotly_chart(fig, use_container_width=True)
+    cols[i % 2].plotly_chart(fig, width="stretch")
   
+# =======================================
+# 5️⃣ Line Chart: Avg Answer Quality & Inference Time per Model Type
+# =======================================
 
-st.subheader("Normalized Area Chart: Avg Answer Quality & Inference Time")
+st.subheader("Avg Answer Quality & Inference Time per Model Type")
 
-# --- Agrégation des données ---
+# Préparation des données agrégées
 line_data = filtered_df.groupby("Model_Category", as_index=False).agg({
     "Answer_quality": "mean",
     "Inference_timing": "mean"
-}).round(2)
+}).round(1)
 
-# --- Normalisation manuelle entre 0 et 1 ---
-for col in ["Answer_quality", "Inference_timing"]:
-    min_val = line_data[col].min()
-    max_val = line_data[col].max()
-    line_data[col] = (line_data[col] - min_val) / (max_val - min_val)
-
-# --- Transformation en format long pour area chart ---
+# On crée une version "longue" pour tracer deux courbes sur le même graphique
 line_melted = line_data.melt(
     id_vars="Model_Category",
     value_vars=["Answer_quality", "Inference_timing"],
     var_name="Metric",
-    value_name="Normalized Value"
+    value_name="Value"
 )
 
-# --- Renommage pour affichage propre ---
+# Remplacer les noms des métriques pour un affichage plus propre
 line_melted["Metric"] = line_melted["Metric"].replace({
     "Answer_quality": "Avg Answer Quality",
-    "Inference_timing": "Avg Inference Time"
+    "Inference_timing": "Avg Inference Time (s)"
 })
 
-# --- Création de l'Area Chart ---
-fig_area = px.area(
+# Création du graphique
+fig_line = px.line(
     line_melted,
     x="Model_Category",
-    y="Normalized Value",
+    y="Value",
     color="Metric",
-    line_group="Metric",
-    labels={"Normalized Value": "Normalized Value (0–1)"},
+    markers=True,
+    text="Value",
     color_discrete_map={
         "Avg Answer Quality": "#004080",
-        "Avg Inference Time": "#82B1FF"
-    }
-)
+        "Avg Inference Time (s)": "#82B1FF"
+    })
 
-# --- Mise en forme UX/UI ---
-fig_area.update_layout(
+# Mise en forme UX/UI
+fig_line.update_traces(
+    texttemplate="%{text:.1f}",
+    textposition="top center",
+    line=dict(width=3)
+)
+fig_line.update_layout(
     plot_bgcolor="white",
     paper_bgcolor="white",
     xaxis_title="Model Type",
-    yaxis_title="Normalized Value (0–1)",
+    yaxis_title="Average Value",
     legend_title="Metric",
     title_x=0.5,
-    height=400
+    height=400  # Réduit la hauteur pour une intégration fluide
 )
 
-# --- Affichage ---
-st.plotly_chart(fig_area, use_container_width=True)
+# Affichage dans Streamlit
+st.plotly_chart(fig_line, width="stretch")
+
+
+# ---  Line Chart: Average CO2 & Electricity by Model_Category ---
+st.markdown("Line Chart: Average Consumption per Inference Time by Model Category")
+
+line_df = filtered_df.groupby(["Model_Category", "Inference_timing"], as_index=False).agg({
+    "CO2_emission": "mean",
+    "Electricity_consumption": "mean"
+})
+
+fig_line = px.line(
+    line_df,
+    x="Inference_timing",
+    y=["CO2_emission", "Electricity_consumption"],
+    color="Model_Category",
+    markers=True,
+    labels={
+        "value": "Average Consumption",
+        "Inference_timing": "Inference Time (s)",
+        "variable": "Metric"
+    },
+    color_discrete_sequence=["#004080", "#1f77b4", "#3b82f6", "#60a5fa"]
+)
+fig_line.update_layout(
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    legend_title="Model Category / Metric"
+)
+st.plotly_chart(fig_line, width="stretch")
 
 
 # =======================================
@@ -211,7 +240,7 @@ fig_bar.update_layout(
     font=dict(size=13),
 )
 
-st.plotly_chart(fig_bar, use_container_width=True)
+st.plotly_chart(fig_bar, width="stretch",width="stretch")
 
 
 
@@ -241,7 +270,7 @@ fig_scatter.update_layout(
     yaxis_title="CO2 Emission (g) [log scale]",
     legend_title="Model Category"
 )
-st.plotly_chart(fig_scatter, use_container_width=True)
+st.plotly_chart(fig_scatter, width="stretch",width="stretch")
 
 
 

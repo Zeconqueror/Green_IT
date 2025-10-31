@@ -1,4 +1,6 @@
 streamlit
 pandas
 plotly
-os
+kaleido
+python-pptx
+scikit-learn

@@ -20,6 +20,35 @@ with st.expander("📂 Show/Hide Dataset Preview", expanded=False):
     st.dataframe(df)
 
 # =======================================
+# 7️⃣ Extended: Download PPT
+# =======================================
+
+
+
+with st.expander("📂Extended: TP1Compar'AI Presentation", expanded=False):
+    st.subheader("Here is the PowerPoint file (.pptx)")
+
+    # chemins candidats — ajuste si nécessaire
+    ppt_candidates = [
+        "Tp1_Green_IT/dashboard.pptx",
+        "dashboard.pptx",
+        "Tp1_Green_IT/output/dashboard.pptx"
+    ]
+    ppt_file_path = next((p for p in ppt_candidates if os.path.exists(p)), None)
+
+    if ppt_file_path:
+        st.success(f"Fichier trouvé : {ppt_file_path}")
+        with open(ppt_file_path, "rb") as f:
+            ppt_bytes = f.read()
+        st.download_button(
+            label="📥 Télécharger le PPTX",
+            data=ppt_bytes,
+            file_name=os.path.basename(ppt_file_path),
+            mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        )
+    else:
+        st.warning("Aucun fichier PPTX trouvé. Chemins vérifiés: " + ", ".join(ppt_candidates))
+# =======================================
 # 3️⃣ Filters Removed (all data used)
 # =======================================
 # On utilise tout le dataset sans filtre
@@ -274,34 +303,4 @@ st.plotly_chart(fig_scatter,width="stretch")
 
 
 
-
-# =======================================
-# 7️⃣ Extended: Download PPT
-# =======================================
-
-
-
-with st.expander("📂Extended: TP1Compar'AI Presentation", expanded=False):
-    st.subheader("Here is the PowerPoint file (.pptx)")
-
-    # chemins candidats — ajuste si nécessaire
-    ppt_candidates = [
-        "Tp1_Green_IT/dashboard.pptx",
-        "dashboard.pptx",
-        "Tp1_Green_IT/output/dashboard.pptx"
-    ]
-    ppt_file_path = next((p for p in ppt_candidates if os.path.exists(p)), None)
-
-    if ppt_file_path:
-        st.success(f"Fichier trouvé : {ppt_file_path}")
-        with open(ppt_file_path, "rb") as f:
-            ppt_bytes = f.read()
-        st.download_button(
-            label="📥 Télécharger le PPTX",
-            data=ppt_bytes,
-            file_name=os.path.basename(ppt_file_path),
-            mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
-        )
-    else:
-        st.warning("Aucun fichier PPTX trouvé. Chemins vérifiés: " + ", ".join(ppt_candidates))
         

@@ -240,7 +240,7 @@ fig_bar.update_layout(
     font=dict(size=13),
 )
 
-st.plotly_chart(fig_bar, width="stretch",width="stretch")
+st.plotly_chart(fig_bar,width="stretch")
 
 
 
@@ -270,7 +270,7 @@ fig_scatter.update_layout(
     yaxis_title="CO2 Emission (g) [log scale]",
     legend_title="Model Category"
 )
-st.plotly_chart(fig_scatter, width="stretch",width="stretch")
+st.plotly_chart(fig_scatter,width="stretch")
 
 
 

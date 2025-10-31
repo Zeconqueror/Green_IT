@@ -1,1 +1,6 @@
+streamlit
+pandas
+plotly
+kaleido
+python-pptx
 scikit-learn

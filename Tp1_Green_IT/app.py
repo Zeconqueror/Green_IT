@@ -15,7 +15,7 @@ st.title("🌍 LLM Evaluation Dashboard: Performance vs Impact")
 df = pd.read_csv("Tp1_Green_IT/data.csv", sep=";")
 
 # --- Dataset preview ---
-with st.expander("📂 Show/Hide Dataset Preview", expanded=False):
+with st.expander("📂Dataset Preview", expanded=False):
     st.subheader("Dataset Preview")
     st.dataframe(df)
 
@@ -53,14 +53,14 @@ with st.expander("📂Presentation: TP1Compar'AI", expanded=False):
 filtered_df = df.copy()
 
 # =======================================
-# 🍩 Model Overview: Metrics Summary (Pie Charts)
+# 🍩 Model Overview: Metrics Summary
 # =======================================
 
-st.subheader("Model Overview: Metrics Summary (Pie Charts)")
+st.subheader("Model Overview: Metrics Summary")
 
 # --- Sélecteur de mode de vue ---
 view_option = st.radio(
-    "Select View Mode for Pie Charts",
+    "Select View Mode",
     options=["View by Model", "View by Model Category"],
     key="pie_view"
 )
@@ -122,7 +122,7 @@ for i, metric in enumerate(metrics):
     cols[i % 2].plotly_chart(fig, width="stretch")
   
 # =======================================
-# 5️⃣ Line Chart: Avg Answer Quality & Inference Time per Model Type
+# Avg Answer Quality & Inference Time per Model Type
 # =======================================
 
 st.subheader("Avg Answer Quality & Inference Time per Model Type")
@@ -181,7 +181,7 @@ st.plotly_chart(fig_line, width="stretch")
 
 
 # ---  Line Chart: Average CO2 & Electricity by Model_Category ---
-st.markdown("Line Chart: Average Consumption per Inference Time by Model Category")
+st.markdown("Average Consumption per Inference Time by Model Category")
 
 line_df = filtered_df.groupby(["Model_Category", "Inference_timing"], as_index=False).agg({
     "CO2_emission": "mean",
@@ -212,7 +212,7 @@ st.plotly_chart(fig_line, width="stretch")
 # =======================================
 # Bar Chart: Average CO₂ & Electricity per Question Category (Blue & Yellow)
 # =======================================
-st.subheader("📊 Average CO₂ & Electricity per Question Category")
+st.subheader(" Average CO₂ & Electricity per Question Category")
 
 # --- Calcul des moyennes par catégorie de question ---
 avg_df = (
@@ -274,7 +274,7 @@ st.plotly_chart(fig_bar,width="stretch")
 # =======================================
 #  Consumption: Electricity & CO2
 # =======================================
-st.subheader("CO2 vs Electricity Scatter Plot (log scale)")
+st.subheader("CO2 vs Electricity Scatter Plot")
 
 # --- Scatter plot CO2 vs Electricity (en g et Wh) ---
 fig_scatter = px.scatter(
@@ -302,4 +302,5 @@ st.plotly_chart(fig_scatter,width="stretch")
 
 
         
+
 

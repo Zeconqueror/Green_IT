@@ -1,0 +1,6 @@
+﻿Step;Framework;Framework Duration (s) ;Energy (kWh) ;CO₂ (kg) ;Memory (MB)
+Average rating per author.;Pyspark;73,4478;0,0011;0,0006787;
+Number of reviews per publisher;Pyspark;70,9642;0,0010;0,0006564;
+Top 10 most-reviewed categories.;Pyspark;73,5059;0,0011;0,0006789;
+Compute average review length.;Pyspark;93,3883;0,0013;0,0008646;
+Compute average review length.;Pyspark;397,0451;0,0057;0,0036727;
